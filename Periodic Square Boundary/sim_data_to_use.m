@@ -25,7 +25,7 @@ no_it = 15; % No.of realisations
 
 parfor i = 1:no_it
 
-    [theta_t, pos_t, sum_int] = n_particles_to_use_reflec(n, r_spon, r_align, sigma_theta, dt, n_iter, ...
+    [theta_t, pos_t, sum_int] = n_particles_to_use(n, r_spon, r_align, sigma_theta, dt, n_iter, ...
         k_alg, S0, box_length, int_rad)
 
     theta(:,:,i) = theta_t; % orientation 
@@ -37,7 +37,7 @@ end
 n_n = struct('pos_t', pos, 'theta_t', theta, 'S0', S0, 'dt', dt, 'n_iter', n_iter, ...
     'box_length', box_length, 'r_spon', r_spon, 'r_align', r_align, 'n', n, 'int_rad', int_rad, ...
     'k_alg', k_alg, 'no_it', no_it, 'sigma_t', sigma_theta);
-save('n_pw_15_L5_k1_reflec.mat', '-struct', 'n_n', '-v7.3')
+save('n_pw_15_L5_k1.mat', '-struct', 'n_n', '-v7.3')
 
 disp('Simulation complete')
 
